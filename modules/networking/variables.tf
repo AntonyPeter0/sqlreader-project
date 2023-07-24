@@ -24,3 +24,21 @@ variable "subnet_name" {
   description = "This defines the subnets in Vnet"
   default = [ "default-subnet" ]
 }
+
+variable "network_security_group_names" {
+
+  type = map(string)
+  description = "This defines the names of  NSG "
+  default = {
+    "default" = "default-nsg"
+  }
+  
+}
+
+variable "nsg_rules" {
+
+  type = list
+  description= "These are the rules of NSG"
+  default = [ {"default"="default"} ]
+  
+}
