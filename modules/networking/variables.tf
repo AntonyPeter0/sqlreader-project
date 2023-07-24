@@ -22,4 +22,5 @@ variable "virtual_network_address_space" {
 variable "subnet_name" {
   type = set(string)
   description = "This defines the subnets in Vnet"
+  default = [ "default-subnet" ]
 }
