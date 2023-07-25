@@ -4,6 +4,7 @@ module general_module {
     location_name = var.location_name
 }
 
+
 resource "azurerm_virtual_network" "network" {
 
     name = var.virtual_network_name
@@ -42,7 +43,8 @@ resource "azurerm_subnet_network_security_group_association" "nsg-assosciation" 
     network_security_group_id = azurerm_network_security_group.nsg[each.key].id
 
     depends_on = [ azurerm_virtual_network.network,
-    azurerm_network_security_group.nsg ]
+    azurerm_network_security_group.nsg,
+    azurerm_subnet.subnets ]
   
 }
 

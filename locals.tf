@@ -6,7 +6,7 @@ locals {
   subnet_name = ["web-subnet","db-subnet"]
   network_security_group_names = { 
     "web-nsg" = "web-subnet",
-    "db-nsg"="db-subnet" }
+    "db-nsg"= "db-subnet" }
 
   network_security_group_rules=[
   {

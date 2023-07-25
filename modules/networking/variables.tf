@@ -22,7 +22,7 @@ variable "virtual_network_address_space" {
 variable "subnet_name" {
   type = set(string)
   description = "This defines the subnets in Vnet"
-  default = [ "default-subnet" ]
+   default = [ "default-subnet" ]
 }
 
 variable "network_security_group_names" {
@@ -30,7 +30,7 @@ variable "network_security_group_names" {
   type = map(string)
   description = "This defines the names of  NSG "
   default = {
-    "default" = "default-nsg"
+    "def" = "default-nsg"
   }
   
 }
