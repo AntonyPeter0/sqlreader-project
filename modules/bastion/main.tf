@@ -41,11 +41,11 @@
 # #   ]
 # }
 
-module general_module {
-    source = ".././general"
-    resource_group_name = var.resource_group_name
-    location_name = var.location_name
-}
+# module general_module {
+#     source = ".././general"
+#     resource_group_name = var.resource_group_name
+#     location_name = var.location_name
+# }
 
 
 resource "azurerm_subnet" "basiton_subnet" {
@@ -66,7 +66,7 @@ resource "azurerm_public_ip" "bastionip" {
     allocation_method = var.allocation_method
     sku = var.bastion_sku
 
-    depends_on = [ module.general_module.output_resourcegroup ]
+    # depends_on = [ module.general_module.output_resourcegroup ]
   
 }
 
