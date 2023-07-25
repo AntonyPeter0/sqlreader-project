@@ -28,6 +28,8 @@ module "bastion_service" {
     virtual_network_name = local.virtual_network_name
     virtual_network_address_space = local.virtual_network_address_space
 
-    depends_on = [ module.networking_module ]
+    depends_on = [ module.general_module,
+    module.networking_module
+     ]
     
 }
