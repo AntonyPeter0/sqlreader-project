@@ -14,6 +14,9 @@ module "networking_module" {
     virtual_network_name = local.virtual_network_name
     virtual_network_address_space = local.virtual_network_address_space
     subnet_name = local.subnet_name
+    network_security_group_names = local.network_security_group_names
+    nsg_rules = local.network_security_group_rules
+    
   
 }
 
@@ -24,5 +27,9 @@ module "bastion_service" {
     location_name = local.location
     virtual_network_name = local.virtual_network_name
     virtual_network_address_space = local.virtual_network_address_space
+
+    depends_on = [ module.general_module,
+    module.networking_module
+     ]
     
 }

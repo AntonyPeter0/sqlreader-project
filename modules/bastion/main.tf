@@ -1,16 +1,51 @@
-module networking_module {
-    source = ".././networking"
-    resource_group_name = var.resource_group_name
-    location_name = var.location_name
-    virtual_network_name = var.virtual_network_name
-    virtual_network_address_space = var.virtual_network_address_space
-}
+# module networking_module {
+#     source = ".././networking"
+#     resource_group_name = var.resource_group_name
+#     location_name = var.location_name
+#     virtual_network_name = var.virtual_network_name
+#     virtual_network_address_space = var.virtual_network_address_space
+    
+# #     network_security_group_names = { 
+# #     "web-nsg" = "web-subnet",
+# #     "db-nsg"= "db-subnet" }
+# #     subnet_name = ["web-subnet","db-subnet"]
+# #     nsg_rules = [
+# #   {
+# #       id=1,
+# #       priority="200",
+# #       network_security_group_name="web-nsg"
+# #       destination_port_range="3389"
+# #       access="Allow"
+# #   },
+# #   {
+# #       id=2,
+# #       priority="300",
+# #       network_security_group_name="web-nsg"
+# #       destination_port_range="80"
+# #       access="Allow"
+# #   },
+# #   {
+# #       id=3,
+# #       priority="400",
+# #       network_security_group_name="web-nsg"
+# #       destination_port_range="8172"
+# #       access="Allow"
+# #   },
+# #   {
+# #       id=4,
+# #       priority="200",
+# #       network_security_group_name="db-nsg"
+# #       destination_port_range="3389"
+# #       access="Allow"
+# #   }
+# #   ]
+# }
 
-module general_module {
-    source = ".././general"
-    resource_group_name = var.resource_group_name
-    location_name = var.location_name
-}
+# module general_module {
+#     source = ".././general"
+#     resource_group_name = var.resource_group_name
+#     location_name = var.location_name
+# }
 
 
 resource "azurerm_subnet" "basiton_subnet" {
@@ -19,7 +54,7 @@ resource "azurerm_subnet" "basiton_subnet" {
     resource_group_name = var.resource_group_name
     virtual_network_name = var.virtual_network_name
     address_prefixes = [ cidrsubnet(var.virtual_network_address_space,8,10)]
-    depends_on = [module.networking_module.output_virtual_network ]
+    # depends_on = [module.networking_module.output_virtual_network ]
 
 }
 
@@ -31,7 +66,7 @@ resource "azurerm_public_ip" "bastionip" {
     allocation_method = var.allocation_method
     sku = var.bastion_sku
 
-    depends_on = [ module.general_module.output_resourcegroup ]
+    # depends_on = [ module.general_module.output_resourcegroup ]
   
 }
 
