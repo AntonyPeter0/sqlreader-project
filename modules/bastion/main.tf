@@ -1,25 +1,9 @@
-module networking_module {
-    source = ".././networking"
-    resource_group_name = var.resource_group_name
-    location_name = var.location_name
-    virtual_network_name = var.virtual_network_name
-    virtual_network_address_space = var.virtual_network_address_space
-}
-
-module general_module {
-    source = ".././general"
-    resource_group_name = var.resource_group_name
-    location_name = var.location_name
-}
-
-
 resource "azurerm_subnet" "basiton_subnet" {
     
     name = var.subnet_name
     resource_group_name = var.resource_group_name
     virtual_network_name = var.virtual_network_name
     address_prefixes = [ cidrsubnet(var.virtual_network_address_space,8,10)]
-    depends_on = [module.networking_module.output_virtual_network ]
 
 }
 
@@ -30,8 +14,6 @@ resource "azurerm_public_ip" "bastionip" {
     location = var.location_name
     allocation_method = var.allocation_method
     sku = var.bastion_sku
-
-    depends_on = [ module.general_module.output_resourcegroup ]
   
 }
 
@@ -46,5 +28,8 @@ resource "azurerm_bastion_host" "appbastion" {
       subnet_id = azurerm_subnet.basiton_subnet.id
       public_ip_address_id = azurerm_public_ip.bastionip.id
     }
+
+    depends_on = [ azurerm_public_ip.bastionip,
+    azurerm_subnet.basiton_subnet ]
   
 }
