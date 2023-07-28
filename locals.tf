@@ -4,6 +4,7 @@ locals {
   virtual_network_name = "sqlreader-vnet"
   virtual_network_address_space = "10.0.0.0/16"
   subnet_name = ["web-subnet","db-subnet"]
+
   network_security_group_names = { 
     "web-nsg" = "web-subnet",
     "db-nsg"= "db-subnet" }
@@ -38,4 +39,7 @@ locals {
       access="Allow"
   }
   ]
+
+  private_ip_allocation_type = "Dynamic"
+
 }
