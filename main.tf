@@ -41,4 +41,9 @@ module "compute_module" {
     location_name = local.location
     subnet_id =  module.networking_module.output_subnet["db-subnet"].id
     private_ip_allocation_type = local.private_ip_allocation_type
+    public_ip_name = local.public_ip_name
+    public_ip_required = local.public_ip_required
+    interface_name = local.interface_name
+    depends_on = [ module.networking_module
+     ]
 }

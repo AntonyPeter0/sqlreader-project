@@ -41,5 +41,7 @@ locals {
   ]
 
   private_ip_allocation_type = "Dynamic"
-
+  public_ip_name = "app-ip"
+  public_ip_required = false
+  interface_name = "db-interface"
 }
