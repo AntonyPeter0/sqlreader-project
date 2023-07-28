@@ -10,7 +10,7 @@ terraform {
     organization = "infinite_inc"
 
     workspaces {
-      name = "workspace-dev"
+      name = "sqlreader-project"
     }
   }
 }
