@@ -2,7 +2,7 @@ $LoginName="sqladmin"
 $LoginPassword="Azure@1234"
 $DatabaseName="app-db"
 $ServerName="db-vm"
-$DBQuery="CREATE DATABASE appdb"
+$DBQuery="CREATE DATABASE ${DatabaseName}"
 
 
 Invoke-SqlCmd -ServerInstance $ServerName -U $LoginName -p $LoginPassword -Query $DBQuery
