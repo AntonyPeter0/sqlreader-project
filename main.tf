@@ -89,5 +89,4 @@ module custom_script {
   ]
 }
 
-}
 
