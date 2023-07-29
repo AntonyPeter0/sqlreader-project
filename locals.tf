@@ -48,7 +48,7 @@ locals {
   admin_username = "AntonyPeter"
   admin_password = "Admin@123"
 
-  var_source_image_reference = {
+  source_image_reference = {
     publisher = "MicrosoftSQLServer",
     offer = "sql2019-ws2019",
     sku = "sqldev",
