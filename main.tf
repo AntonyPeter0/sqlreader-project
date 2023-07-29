@@ -72,6 +72,7 @@ module "storage_module" {
     app_container_name = local.app_container_name
     depends_on = [ module.general_module ]
   
+
 }
 
 module custom_script {
@@ -87,3 +88,6 @@ module custom_script {
     module.storage_module
   ]
 }
+
+}
+

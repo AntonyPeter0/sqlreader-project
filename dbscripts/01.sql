@@ -11,4 +11,5 @@ INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (2,'Lap
 
 INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (3,'Tabs',300,'https://${storage_account_name}.blob.core.windows.net/${app_container_name}/Tablet.jpg')
 
+
      	
