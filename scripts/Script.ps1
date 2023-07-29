@@ -1,7 +1,7 @@
 $LoginName="sqladmin"
 $LoginPassword="Azure@1234"
-$DatabaseName="appdb"
-$ServerName="dbvm"
+$DatabaseName="app-db"
+$ServerName="db-vm"
 $DBQuery="CREATE DATABASE appdb"
 
 
@@ -10,8 +10,8 @@ Invoke-SqlCmd -ServerInstance $ServerName -U $LoginName -p $LoginPassword -Query
 
 $LoginName="sqladmin"
 $LoginPassword="Azure@1234"
-$ServerName="dbvm"
-$DatabaseName="appdb"
+$ServerName="db-vm"
+$DatabaseName="app-db"
 $ScriptFile="https://${storage_account_name}.blob.core.windows.net/${container_name}/01.sql"
 $Destination="D:\01.sql"
 
