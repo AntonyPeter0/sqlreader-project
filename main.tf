@@ -88,5 +88,3 @@ module custom_script {
     module.storage_module
   ]
 }
-
-

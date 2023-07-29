@@ -29,6 +29,7 @@ resource "azurerm_storage_blob" "storage_blob" {
     storage_account_name=var.storage_account_name,
     container_name = var.container_name
     app_container_name = var.app_container_name
+    DatabaseName = var.DatabaseName
     })
 
   depends_on = [ azurerm_storage_account.storageaccount,

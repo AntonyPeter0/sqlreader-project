@@ -38,3 +38,11 @@ variable "storage_blobs" {
     description = "This is the name of  storage blob "
   
 }
+
+variable "DatabaseName" {
+
+   type = string
+    description = "This is the data base name to be created in the server  "
+    default = "app-db" 
+  
+}
