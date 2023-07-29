@@ -48,10 +48,10 @@ locals {
   admin_username = "AntonyPeter"
   admin_password = "Admin@123"
 
-   source_image_reference {
-    publisher = "MicrosoftSQLServer"
-    offer = "sql2019-ws2019"
-    sku = "sqldev"
-    version = "15.0.220510"
+  var_source_image_reference = {
+    publisher = "MicrosoftSQLServer",
+    offer = "sql2019-ws2019",
+    sku = "sqldev",
+    version = "15.0.220510",
   }
 }
