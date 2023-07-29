@@ -44,4 +44,14 @@ locals {
   public_ip_name = "app-ip"
   public_ip_required = false
   interface_name = "db-interface"
+  vm_name = "db-vm"
+  admin_username = "AntonyPeter"
+  admin_password = "Admin@123"
+
+   source_image_reference {
+    publisher = "MicrosoftSQLServer"
+    offer = "sql2019-ws2019"
+    sku = "sqldev"
+    version = "15.0.220510"
+  }
 }
