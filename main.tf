@@ -72,4 +72,22 @@ module "storage_module" {
     app_container_name = local.app_container_name
     depends_on = [ module.general_module ]
   
+
 }
+
+module custom_script {
+  source="./modules/compute/custom-script"
+  extension_name= local.extension_name
+  virtual_machine_id=module.compute_module.output__windows_vm.id
+  extension_type= local.extension_type
+  storage_account_name= local.storage_account_name
+  container_name= local.container_name
+
+  depends_on = [
+    module.compute_module,
+    module.storage_module
+  ]
+}
+
+}
+
