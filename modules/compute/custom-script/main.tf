@@ -13,3 +13,4 @@ resource "azurerm_virtual_machine_extension" "vmextension" {
 SETTINGS
 
 }
+//
