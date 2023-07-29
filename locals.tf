@@ -62,4 +62,11 @@ locals {
   storage_account_name = "appstorerandom12345num"
   app_container_name = "images"
 
+  extension_name="dbvm-extension"
+  extension_type={
+  publisher            = "Microsoft.Compute"
+  type                 = "CustomScriptExtension"
+  type_handler_version = "1.10"
+  }
+
 }

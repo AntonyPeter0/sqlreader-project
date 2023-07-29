@@ -9,6 +9,6 @@ INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (1,'Mob
 
 INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (2,'Laptop',200,'https://${storage_account_name}.blob.core.windows.net/${app_container_name}/Laptop.jpg')
 
-INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (3,'Tabs',300,'https://${storage_account_name}.blob.core.windows.net/${app_container_name}/Laptop.jpg')
+INSERT INTO Products(ProductID,ProductName,Quantity,ProductImage) VALUES (3,'Tabs',300,'https://${storage_account_name}.blob.core.windows.net/${app_container_name}/Tablet.jpg')
 
      	
