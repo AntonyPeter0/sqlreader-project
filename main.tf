@@ -60,3 +60,16 @@ resource "azurerm_mssql_virtual_machine" "mssqlmachine" {
   sql_connectivity_port            = 1433
   sql_connectivity_type            = "PRIVATE"
 }
+
+module "storage_module" {
+
+    source = "./modules/storageaccount"
+    storage_account_name = local.storage_account_name
+    storage_blobs = local.storage_blobs
+    resource_group_name = local.resource_group_name
+    location_name = local.location
+    container_name = local.container_name
+    app_container_name = local.app_container_name
+    depends_on = [ module.general_module ]
+  
+}

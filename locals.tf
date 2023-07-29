@@ -54,4 +54,12 @@ locals {
     sku = "sqldev",
     version = "15.0.220510",
   }
+  container_name = "scripts"
+  storage_blobs = {
+    "01.sql" = "./dbscripts"
+    "Script.ps1" = "./scripts"
+  }
+  storage_account_name = "appstorerandom12345num"
+  app_container_name = "images"
+
 }
