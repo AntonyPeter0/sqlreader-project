@@ -36,6 +36,7 @@ variable "container_access_type" {
 variable "storage_blobs" {
     type = map
     description = "This is the name of  storage blob "
+    default = {""=""}
   
 }
 
@@ -45,4 +46,28 @@ variable "DatabaseName" {
     description = "This is the data base name to be created in the server  "
     default = "appdb" 
   
+}
+
+variable "storage_account_exists" {
+  type=bool
+  description="This defines the whether the storage account exists"
+  default = false
+}
+
+variable "blobs_binary" {
+  type=map
+  description="This defines the binary blobs to be added"
+  default = {""=""}
+}
+
+variable "blobs_enabled" {
+  type=bool
+  description="This defines the blobs need to be uploaded"
+  default = false
+}
+
+variable "blobs_binary_enabled"{
+  type=bool
+  description="This defines the binary blobs need to be uploaded"
+  default = false
 }

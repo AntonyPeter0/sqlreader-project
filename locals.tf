@@ -70,6 +70,7 @@ locals {
   type_handler_version = "1.10"
   }
 
+ image_container_name = "images"    
 }
 
 
