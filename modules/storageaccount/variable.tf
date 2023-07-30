@@ -43,6 +43,6 @@ variable "DatabaseName" {
 
    type = string
     description = "This is the data base name to be created in the server  "
-    default = "app-db" 
+    default = "appdb" 
   
 }
