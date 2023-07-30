@@ -83,7 +83,7 @@ module custom_script {
   extension_type= local.extension_type
   storage_account_name= local.storage_account_name
   container_name= local.container_name
-
+  script_name = local.script_name
   depends_on = [
     module.compute_module,
     module.storage_module
@@ -126,4 +126,18 @@ module "app_compute_module" {
     domain_name_label = local.domain_name_label
     depends_on = [ module.networking_module
      ]
+}
+
+module app_custom_script {
+  source="./modules/compute/custom-script"
+  extension_name= local.app_extension_name
+  virtual_machine_id=module.compute_module.output__windows_vm.id
+  extension_type= local.extension_type
+  storage_account_name= local.storage_account_name
+  container_name= local.container_name
+  script_name = local.app_script_name
+  depends_on = [
+    module.app_compute_module,
+    module.storage_module
+  ]
 }

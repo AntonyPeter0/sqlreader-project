@@ -7,8 +7,8 @@ resource "azurerm_virtual_machine_extension" "vmextension" {
   
   settings = <<SETTINGS
     {
-        "fileUris": ["https://${var.storage_account_name}.blob.core.windows.net/${var.container_name}/Script.ps1"],
-          "commandToExecute": "powershell -ExecutionPolicy Unrestricted -file Script.ps1"     
+        "fileUris": ["https://${var.storage_account_name}.blob.core.windows.net/${var.container_name}/${var.script_name}"],
+          "commandToExecute": "powershell -ExecutionPolicy Unrestricted -file ${var.script_name}"     
     }
 SETTINGS
 

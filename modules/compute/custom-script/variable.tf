@@ -23,4 +23,11 @@ variable "container_name" {
   description="This defines the container name"
 }
 
+variable "script_name" {
+
+  type=string
+  description="This defines the script name"
+  
+}
+
 

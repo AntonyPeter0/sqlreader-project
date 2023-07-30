@@ -69,12 +69,16 @@ locals {
   storage_blobs = {
     "01.sql" = "./dbscripts"
     "Script.ps1" = "./scripts"
+    "Script2.ps1" = "./scripts"
   }
   storage_account_name = "appstorerandom12345num"
   app_container_name = "images"
 
 
   extension_name="dbvm-extension"
+  app_extension_name="webvm-extension"
+  script_name = "Script.ps1"
+  app_script_name = "Script2.ps1"
   extension_type={
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
