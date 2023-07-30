@@ -108,3 +108,21 @@ module "app_storage_module"{
       module.general_module
     ]
 }
+
+module "app_compute_module" {
+
+    source = "./modules/compute"
+    resource_group_name = local.resource_group_name
+    location_name = local.location
+    subnet_id =  module.networking_module.output_subnet["web-subnet"].id
+    private_ip_allocation_type = local.private_ip_allocation_type
+    public_ip_name = local.app_public_ip_name
+    public_ip_required = local.app_public_ip_required
+    interface_name = local.app_interface_name
+    vm_name = local.app_vm_name
+    admin_username = local.admin_username
+    admin_password = local.admin_password
+    source_image_reference = local.app_source_image_reference
+    depends_on = [ module.networking_module
+     ]
+}

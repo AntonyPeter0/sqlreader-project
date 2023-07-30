@@ -42,9 +42,13 @@ locals {
 
   private_ip_allocation_type = "Dynamic"
   public_ip_name = "app-ip"
+  app_public_ip_name ="web-ip"
   public_ip_required = false
+  app_public_ip_required = true
   interface_name = "db-interface"
+  app_interface_name = "db-interface"
   vm_name = "db-vm"
+  app_vm_name = "web-vm"
   admin_username = "AntonyPeter"
   admin_password = "Admin@123"
 
@@ -53,6 +57,13 @@ locals {
     offer = "sql2019-ws2019",
     sku = "sqldev",
     version = "15.0.220510",
+  }
+
+  app_source_image_reference = {
+    publisher = "MicrosoftWindowsServer",
+    offer = "WindowsServer",
+    sku = "2019-Datacenter",
+    version = "latest",
   }
   container_name = "scripts"
   storage_blobs = {

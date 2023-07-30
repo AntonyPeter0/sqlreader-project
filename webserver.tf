@@ -1,54 +1,54 @@
-resource "azurerm_network_interface" "webinterface" {
-  name                = "webinterface"
-  location            = local.location  
-  resource_group_name = local.resource_group_name
+# resource "azurerm_network_interface" "webinterface" {
+#   name                = "webinterface"
+#   location            = local.location  
+#   resource_group_name = local.resource_group_name
 
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = module.networking_module.output_subnet["web-subnet"].id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.webip.id
-  }
+#   ip_configuration {
+#     name                          = "internal"
+#     subnet_id                     = module.networking_module.output_subnet["web-subnet"].id
+#     private_ip_address_allocation = "Dynamic"
+#     public_ip_address_id = azurerm_public_ip.webip.id
+#   }
 
-  depends_on = [
-    module.networking_module.output_virtual_network,
-    azurerm_public_ip.webip
-  ]
-}
+#   depends_on = [
+#     module.networking_module.output_virtual_network,
+#     azurerm_public_ip.webip
+#   ]
+# }
 
-resource "azurerm_public_ip" "webip" {
-  name                = "web-ip"
-  resource_group_name = local.resource_group_name
-  location            = local.location 
-  allocation_method   = "Static"
-}
+# resource "azurerm_public_ip" "webip" {
+#   name                = "web-ip"
+#   resource_group_name = local.resource_group_name
+#   location            = local.location 
+#   allocation_method   = "Static"
+# }
 
-data "azurerm_shared_image" "webimage" {
-  name                = "webvm-definition"
-  gallery_name        = "webgallery"
-  resource_group_name = "webvm_group"
-}
+# data "azurerm_shared_image" "webimage" {
+#   name                = "webvm-definition"
+#   gallery_name        = "webgallery"
+#   resource_group_name = "webvm_group"
+# }
 
-resource "azurerm_virtual_machine" "webvm" {
-  name                  = "webvm"
-  location              = local.location
-  resource_group_name   = local.resource_group_name
-  network_interface_ids = [azurerm_network_interface.webinterface.id]
-  vm_size               = "Standard_D2s_v3"
+# resource "azurerm_virtual_machine" "webvm" {
+#   name                  = "webvm"
+#   location              = local.location
+#   resource_group_name   = local.resource_group_name
+#   network_interface_ids = [azurerm_network_interface.webinterface.id]
+#   vm_size               = "Standard_D2s_v3"
 
-    storage_image_reference {
-    id=data.azurerm_shared_image.webimage.id
-  }
-  storage_os_disk {
-    name              = "myosdisk1"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
-  }
+#     storage_image_reference {
+#     id=data.azurerm_shared_image.webimage.id
+#   }
+#   storage_os_disk {
+#     name              = "myosdisk1"
+#     caching           = "ReadWrite"
+#     create_option     = "FromImage"
+#     managed_disk_type = "Standard_LRS"
+#   }
   
-  depends_on = [
-    azurerm_network_interface.webinterface,
-    module.general_module.output_resourcegroup
-  ]
+#   depends_on = [
+#     azurerm_network_interface.webinterface,
+#     module.general_module.output_resourcegroup
+#   ]
     
-}
+# }
