@@ -131,7 +131,7 @@ module "app_compute_module" {
 module app_custom_script {
   source="./modules/compute/custom-script"
   extension_name= local.app_extension_name
-  virtual_machine_id=module.compute_module.output__windows_vm.id
+  virtual_machine_id= module.app_compute_module.output__windows_vm.id
   extension_type= local.extension_type
   storage_account_name= local.storage_account_name
   container_name= local.container_name
