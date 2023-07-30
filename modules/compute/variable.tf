@@ -71,3 +71,11 @@ variable "source_image_reference" {
   
 }
 
+variable "domain_name_label" {
+
+    type=string
+    description = "DNS name"
+    default = "test"
+  
+}
+

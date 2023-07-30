@@ -24,6 +24,7 @@ resource "azurerm_public_ip" "ip" {
   location = var.location_name
   resource_group_name = var.resource_group_name
   allocation_method = "Static"
+  domain_name_label = var.domain_name_label
   
 }
 

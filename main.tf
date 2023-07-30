@@ -123,6 +123,7 @@ module "app_compute_module" {
     admin_username = local.admin_username
     admin_password = local.admin_password
     source_image_reference = local.app_source_image_reference
+    domain_name_label = local.domain_name_label
     depends_on = [ module.networking_module
      ]
 }

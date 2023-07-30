@@ -82,6 +82,7 @@ locals {
   }
 
  image_container_name = "images"    
+ domain_name_label = "sqlappbyantony"
 }
 
 
