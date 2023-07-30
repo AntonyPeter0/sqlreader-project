@@ -81,5 +81,8 @@ resource "azurerm_bastion_host" "appbastion" {
       subnet_id = azurerm_subnet.basiton_subnet.id
       public_ip_address_id = azurerm_public_ip.bastionip.id
     }
+
+    depends_on = [ azurerm_public_ip.bastionip,
+    azurerm_subnet.basiton_subnet ]
   
 }
