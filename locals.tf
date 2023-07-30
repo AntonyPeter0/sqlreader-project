@@ -46,7 +46,7 @@ locals {
   public_ip_required = false
   app_public_ip_required = true
   interface_name = "db-interface"
-  app_interface_name = "db-interface"
+  app_interface_name = "web-interface"
   vm_name = "db-vm"
   app_vm_name = "web-vm"
   admin_username = "AntonyPeter"

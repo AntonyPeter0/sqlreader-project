@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "interface" {
-
+    
     name = var.interface_name
     location = var.location_name
     resource_group_name = var.resource_group_name
