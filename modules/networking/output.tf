@@ -3,5 +3,7 @@ output "output_virtual_network" {
 }
 
 output "output_subnet" {
+
   value = azurerm_subnet.subnets
+  
 }
