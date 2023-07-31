@@ -49,8 +49,8 @@ locals {
   app_interface_name = "web-interface"
   vm_name = "db-vm"
   app_vm_name = "web-vm"
-  admin_username = "AntonyPeter"
-  admin_password = "Admin@123"
+  admin_username = ""
+  admin_password = ""
 
   source_image_reference = {
     publisher = "MicrosoftSQLServer",

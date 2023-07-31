@@ -55,8 +55,8 @@ module "compute_module" {
 resource "azurerm_mssql_virtual_machine" "mssqlmachine" {
   virtual_machine_id = module.compute_module.output__windows_vm.id
   sql_license_type   = "PAYG"
-  sql_connectivity_update_password = "Azure@1234"
-  sql_connectivity_update_username = "sqladmin"
+  sql_connectivity_update_password = ""
+  sql_connectivity_update_username = ""
   sql_connectivity_port            = 1433
   sql_connectivity_type            = "PRIVATE"
 }
